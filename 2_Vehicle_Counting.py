@@ -16,7 +16,7 @@ log_file = open(log_file_name, 'a')
 log_file.write('vehicle_id, count, datetime\n')
 log_file.flush()
 
-cap = cv2.VideoCapture('./videos/sample_traffic_scene.mp4')
+cap = cv2.VideoCapture('./videos/People_Waliking.mp4')
 
 blobs = OrderedDict()
 blob_id = 1
