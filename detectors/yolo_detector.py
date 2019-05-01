@@ -19,7 +19,7 @@ def get_bounding_boxes(image):
     
     # create image blob
     scale = 0.00392
-    image_blob = cv2.dnn.blobFromImage(image, scale, (416, 416), (0, 0, 0), True, crop=No)
+    image_blob = cv2.dnn.blobFromImage(image, scale, (416, 416), (0, 0, 0), True, crop=False)
 
     # detect objects
     net.setInput(image_blob)
