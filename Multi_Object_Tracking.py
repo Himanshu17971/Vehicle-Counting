@@ -3,7 +3,7 @@ from blobs.blob2 import Blob, get_centroid
 import numpy as np
 from collections import OrderedDict
 
-cap = cv2.VideoCapture('./videos/PeopleWalking.avi')
+cap = cv2.VideoCapture('./videos/PeopleWalking.mp4')
 
 blobs = OrderedDict()
 blob_id = 1
