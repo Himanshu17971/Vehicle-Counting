@@ -28,11 +28,13 @@ MAX_CONSECUTIVE_TRACKING_FAILURES = 10
 _, frame = cap.read()
 initial_bboxes = get_bounding_boxes(frame)
 for box in initial_bboxes:
-    tracker = cv2.TrackerCSRT_create()
-    tracker.init(frame, tuple(box))
-    _blob = Blob(box, tracker)
-    blobs[blob_id] = _blob
-
+    try:
+        tracker = cv2.TrackerCSRT_create()
+        tracker.init(frame, tuple(box))
+        _blob = Blob(box, tracker)
+        blobs[blob_id] = _blob
+    except Exception as e:
+        print("Na Ho Paya")
 f_height, f_width, _ = frame.shape
 cl_y = round(4 / 5 * f_height)
 counting_line = [(0, cl_y), (f_width, cl_y)]
