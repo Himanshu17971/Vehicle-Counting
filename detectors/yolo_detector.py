@@ -56,7 +56,7 @@ def get_bounding_boxes(image):
     for i in indices:
         i = i[0]
         _bounding_boxes.append(boxes[i])
-return _bounding_boxes
+    return _bounding_boxes
 
   
     # detect objects
