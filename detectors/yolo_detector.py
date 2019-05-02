@@ -20,7 +20,7 @@ def get_bounding_boxes(image):
     # create image blob
     scale = 0.00392
     try:
-    image = cv2.resize(image, (416, 416))
+        image = cv2.resize(image, (416, 416))
     except exception as e:
         print(str(poor))
     image_blob = cv2.dnn.blobFromImage(image, scale, (416,416), (0, 0, 0), True, crop=False)
