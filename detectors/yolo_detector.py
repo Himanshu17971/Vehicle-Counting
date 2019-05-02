@@ -25,7 +25,7 @@ def get_bounding_boxes(image):
         print("poor")
     try:
         image_blob = cv2.dnn.blobFromImage(image, scale, (416,416), (0, 0, 0), True, crop=False)
-         net.setInput(image_blob)
+        net.setInput(image_blob)
         layer_names = net.getLayerNames()
         output_layers = [layer_names[i[0] - 1] for i in net.getUnconnectedOutLayers()]
         outputs = net.forward(output_layers)
