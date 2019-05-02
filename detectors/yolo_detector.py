@@ -23,8 +23,10 @@ def get_bounding_boxes(image):
         image = cv2.resize(image, (416, 416))
     except Exception as e:
         print("poor")
-    image_blob = cv2.dnn.blobFromImage(image, scale, (416,416), (0, 0, 0), True, crop=False)
-
+    try:
+        image_blob = cv2.dnn.blobFromImage(image, scale, (416,416), (0, 0, 0), True, crop=False)
+    except Exception as e:
+        print("poor")
     # detect objects
     net.setInput(image_blob)
     layer_names = net.getLayerNames()
