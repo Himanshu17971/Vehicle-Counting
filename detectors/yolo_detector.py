@@ -21,7 +21,7 @@ def get_bounding_boxes(image):
     scale = 0.00392
     try:
         image = cv2.resize(image, (416, 416))
-    except exception as e:
+    except Exception as e:
         print(str(poor))
     image_blob = cv2.dnn.blobFromImage(image, scale, (416,416), (0, 0, 0), True, crop=False)
 
