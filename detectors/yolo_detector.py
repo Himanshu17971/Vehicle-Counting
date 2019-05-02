@@ -22,7 +22,7 @@ def get_bounding_boxes(image):
     try:
         image = cv2.resize(image, (416, 416))
     except Exception as e:
-        print(str(poor))
+        print("poor")
     image_blob = cv2.dnn.blobFromImage(image, scale, (416,416), (0, 0, 0), True, crop=False)
 
     # detect objects
